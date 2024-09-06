@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      type="x-icon"
+      href="../assets/img/logo/TradeKeeper-ICON.png"
+    />
+    <title>Trade Keeper</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="../assets/css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <header
+      id="header"
+      class="header fixed-top d-flex align-items-center p-3 mb-5"
+    >
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="../index.html" class="logo d-flex align-items-center">
+          <img src="../assets/img/logo/TradeKeeper.png" alt="" />
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div>
+      <div class="search-bar ms-auto d-flex">
+        <form
+          class="search-form d-flex align-items-center"
+          method="POST"
+          action="#"
+        >
+          <input
+            type="text"
+            name="query"
+            placeholder="Search"
+            title="Enter search keyword"
+          />
+          <button type="submit" title="Search">
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+        <div>
+          <img
+            class="rounded-circle"
+            src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg"
+            alt="user image"
+          />
+          <p>User</p>
+        </div>
+      </div>
+    </header>
+    <aside id="sidebar" class="sidebar">
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="../pages/home.html">
+            <i class="bi bi-grid"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/trader-data.html">
+            <i class="bi bi-journal-text"></i>
+            <span>Trader Data</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="../pages/brokers.html">
+            <i class="bi bi-journal-text"></i>
+            <span>Brokers</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="../pages/vps.html">
+            <i class="bi bi-journal-text"></i>
+            <span>VPS Details</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <main id="main" class="main">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Trader</h4>
+                <div class="d-flex mb-2">
+                  <input
+                    class="form-control bg-transparent"
+                    type="text"
+                    placeholder="Enter User's id"
+                    id="traderSearchInput"
+                  />
+                  <a
+                    type="button"
+                    class="btn btn-danger ms-2"
+                    id="traderSearchBtn"
+                  >
+                    Search
+                  </a>
+                </div>
+                <div class="table-responsive pt-3">
+                  <table class="table table-bordered">
+                    <tbody id="traderTableBody">
+                      <tr>
+                        <td>ID</td>
+                        <td>#1</td>
+                      </tr>
+                      <tr>
+                        <td>First Name</td>
+                        <td>Herman</td>
+                      </tr>
+                      <tr>
+                        <td>Last Name</td>
+                        <td>Beck</td>
+                      </tr>
+                      <tr>
+                        <td>Father's Name</td>
+                        <td>Beck Richards</td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td>demo@gmail.com</td>
+                      </tr>
+                      <tr>
+                        <td>Mobile</td>
+                        <td>999999999</td>
+                      </tr>
+                      <tr>
+                        <td>IP Address</td>
+                        <td>192.81.110.1</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">VPS Details</h4>
+                <div class="table-responsive pt-3">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Server Name</th>
+                        <th scope="col">IP Address</th>
+                        <th scope="col">Operating System</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td scope="row">1</td>
+                        <td>Server 1</td>
+                        <td>192.168.1.1</td>
+                        <td>Ubuntu 20.04</td>
+                        <td>
+                          <span class="badge text-bg-success">Running</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td scope="row">2</td>
+                        <td>Server 2</td>
+                        <td>192.168.1.2</td>
+                        <td>CentOS 8</td>
+                        <td>
+                          <span class="badge text-bg-danger">Stopped</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td scope="row">3</td>
+                        <td>Server 3</td>
+                        <td>192.168.1.2</td>
+                        <td>CentOS 8</td>
+                        <td>
+                          <span class="badge text-bg-danger">Stopped</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td scope="row">4</td>
+                        <td>Server 4</td>
+                        <td>192.168.1.2</td>
+                        <td>CentOS 8</td>
+                        <td>
+                          <span class="badge text-bg-danger">Stopped</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td scope="row">5</td>
+                        <td>Server 5</td>
+                        <td>192.168.1.2</td>
+                        <td>CentOS 8</td>
+                        <td>
+                          <span class="badge text-bg-danger">Stopped</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td scope="row">6</td>
+                        <td>Server 6</td>
+                        <td>192.168.1.2</td>
+                        <td>CentOS 8</td>
+                        <td>
+                          <span class="badge text-bg-danger">Stopped</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td scope="row">7</td>
+                        <td>Server 7</td>
+                        <td>192.168.1.2</td>
+                        <td>CentOS 8</td>
+                        <td>
+                          <span class="badge text-bg-danger">Stopped</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-6 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Brokers Name</h4>
+                <div class="table-responsive pt-3">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>First name</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Herman Beck</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Messsy Adam</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>John Richards</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>Peter Meggik</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>Edward</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>John Doe</td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td>Henry Tom</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Brokers Details</h4>
+                <div class="table-responsive pt-3">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>IP Address</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Herman Beck</td>
+                        <td>demo@gmail.com</td>
+                        <td>######</td>
+                        <td>177.91.176.134</td>
+                      </tr>
+                      <tr>
+                        <td>Messsy Adam</td>
+                        <td>demo@gmail.com</td>
+                        <td>######</td>
+                        <td>144.254.54.101</td>
+                      </tr>
+                      <tr>
+                        <td>John Richards</td>
+                        <td>demo@gmail.com</td>
+                        <td>######</td>
+                        <td>167.206.134.38</td>
+                      </tr>
+                      <tr>
+                        <td>Peter Meggik</td>
+                        <td>demo@gmail.com</td>
+                        <td>######</td>
+                        <td>64.227.175.205</td>
+                      </tr>
+                      <tr>
+                        <td>Edward</td>
+                        <td>demo@gmail.com</td>
+                        <td>######</td>
+                        <td>167.206.134.38</td>
+                      </tr>
+                      <tr>
+                        <td>John Doe</td>
+                        <td>demo@gmail.com</td>
+                        <td>######</td>
+                        <td>108.168.172.250</td>
+                      </tr>
+                      <tr>
+                        <td>Henry Tom</td>
+                        <td>demo@gmail.com</td>
+                        <td>######</td>
+                        <td>144.254.54.101</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Wallet</h4>
+                <form>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"
+                      >Email address</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label"
+                      >Password</label
+                    >
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="exampleInputPassword1"
+                    />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="footer" class="footer">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Trade keeper</span></strong
+        >. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="../index.html">Trade Keeper</a>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="../assets/js/chart/chart.js"></script>
+    <script src="../assets/js/chart/chart.min.js"></script>
+    <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

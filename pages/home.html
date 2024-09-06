@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      type="x-icon"
+      href="../assets/img/logo/TradeKeeper-ICON.png"
+    />
+    <title>Trade Keeper</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="../assets/css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <header
+      id="header"
+      class="header fixed-top d-flex align-items-center p-3 mb-5"
+    >
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="../index.html" class="logo d-flex align-items-center">
+          <img src="../assets/img/logo/TradeKeeper.png" alt="" />
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div>
+      <div class="search-bar ms-auto d-flex">
+        <form
+          class="search-form d-flex align-items-center"
+          method="POST"
+          action="#"
+        >
+          <input
+            type="text"
+            name="query"
+            placeholder="Search"
+            title="Enter search keyword"
+          />
+          <button type="submit" title="Search">
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+        <div>
+          <img
+            class="rounded-circle"
+            src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg"
+            alt="user image"
+          />
+          <p>User</p>
+        </div>
+      </div>
+    </header>
+    <aside id="sidebar" class="sidebar">
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/home.html">
+            <i class="bi bi-grid"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="../pages/trader-data.html">
+            <i class="bi bi-journal-text"></i>
+            <span>Trader Data</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="../pages/brokers.html">
+            <i class="bi bi-journal-text"></i>
+            <span>Brokers</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="../pages/vps.html">
+            <i class="bi bi-journal-text"></i>
+            <span>VPS Details</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <main id="main" class="main">
+      <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="#">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Dashboard</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="container-fluid pt-4">
+        <div class="row g-4">
+          <div class="col-sm-6 col-xl-3 px-0 pe-md-3">
+            <div
+              class="bg-white rounded d-flex align-items-center justify-content-between p-4"
+            >
+              <i class="fa fa-chart-line fa-3x set-color"></i>
+              <div class="ms-3">
+                <p class="mb-2">Today Sale</p>
+                <h6 class="mb-0">$1234</h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xl-3 px-0 pe-lg-3">
+            <div
+              class="bg-white rounded d-flex align-items-center justify-content-between p-4"
+            >
+              <i class="fa fa-chart-bar fa-3x set-color"></i>
+              <div class="ms-3">
+                <p class="mb-2">Total Sale</p>
+                <h6 class="mb-0">$1234</h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xl-3 px-0 pe-md-3">
+            <div
+              class="bg-white rounded d-flex align-items-center justify-content-between p-4"
+            >
+              <i class="fa fa-chart-area fa-3x set-color"></i>
+              <div class="ms-3">
+                <p class="mb-2">Today Revenue</p>
+                <h6 class="mb-0">$1234</h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xl-3 px-0">
+            <div
+              class="bg-white rounded d-flex align-items-center justify-content-between p-4"
+            >
+              <i class="fa fa-chart-pie fa-3x set-color"></i>
+              <div class="ms-3">
+                <p class="mb-2">Total Revenue</p>
+                <h6 class="mb-0">$1234</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Line chart</h4>
+                <canvas id="lineChart"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Bar chart</h4>
+                <canvas id="barChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid pt-3 px-4 bg-white">
+        <div class="text-center rounded p-4">
+          <div class="d-flex align-items-center justify-content-between mb-4">
+            <h5 class="mb-0">Recent Salse</h5>
+            <a href="">Show All</a>
+          </div>
+          <div class="table-responsive">
+            <table
+              class="table text-start align-middle table-bordered table-hover mb-0"
+            >
+              <thead>
+                <tr class="text-dark">
+                  <th scope="col">
+                    <input class="form-check-input" type="checkbox" />
+                  </th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Invoice</th>
+                  <th scope="col">Customer</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input class="form-check-input" type="checkbox" /></td>
+                  <td>01 Jan 2045</td>
+                  <td>INV-0123</td>
+                  <td>Jhon Doe</td>
+                  <td>$123</td>
+                  <td>Paid</td>
+                  <td><a class="btn btn-sm btn-danger" href="">Detail</a></td>
+                </tr>
+                <tr>
+                  <td><input class="form-check-input" type="checkbox" /></td>
+                  <td>01 Jan 2045</td>
+                  <td>INV-0123</td>
+                  <td>Jhon Doe</td>
+                  <td>$123</td>
+                  <td>Paid</td>
+                  <td><a class="btn btn-sm btn-danger" href="">Detail</a></td>
+                </tr>
+                <tr>
+                  <td><input class="form-check-input" type="checkbox" /></td>
+                  <td>01 Jan 2045</td>
+                  <td>INV-0123</td>
+                  <td>Jhon Doe</td>
+                  <td>$123</td>
+                  <td>Paid</td>
+                  <td><a class="btn btn-sm btn-danger" href="">Detail</a></td>
+                </tr>
+                <tr>
+                  <td><input class="form-check-input" type="checkbox" /></td>
+                  <td>01 Jan 2045</td>
+                  <td>INV-0123</td>
+                  <td>Jhon Doe</td>
+                  <td>$123</td>
+                  <td>Paid</td>
+                  <td><a class="btn btn-sm btn-danger" href="">Detail</a></td>
+                </tr>
+                <tr>
+                  <td><input class="form-check-input" type="checkbox" /></td>
+                  <td>01 Jan 2045</td>
+                  <td>INV-0123</td>
+                  <td>Jhon Doe</td>
+                  <td>$123</td>
+                  <td>Paid</td>
+                  <td><a class="btn btn-sm btn-danger" href="">Detail</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid pt-4">
+        <div class="row g-4">
+          <div class="col-sm-12 col-md-6 col-xl-6 px-0 pe-md-2">
+            <div class="h-100 rounded p-4 bg-white">
+              <div
+                class="d-flex align-items-center justify-content-between mb-2"
+              >
+                <h5 class="mb-0">Messages</h5>
+                <a href="">Show All</a>
+              </div>
+              <div class="d-flex align-items-center border-bottom py-3">
+                <img
+                  class="rounded-circle"
+                  src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg"
+                  alt=""
+                  style="width: 40px; height: 40px"
+                />
+                <div class="w-100 ms-3">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h6 class="mb-0">Jhon Doe</h6>
+                    <small>15 minutes ago</small>
+                  </div>
+                  <span>Short message goes here...</span>
+                </div>
+              </div>
+              <div class="d-flex align-items-center border-bottom py-3">
+                <img
+                  class="rounded-circle"
+                  src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg"
+                  alt=""
+                  style="width: 40px; height: 40px"
+                />
+                <div class="w-100 ms-3">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h6 class="mb-0">Jhon Doe</h6>
+                    <small>15 minutes ago</small>
+                  </div>
+                  <span>Short message goes here...</span>
+                </div>
+              </div>
+              <div class="d-flex align-items-center border-bottom py-3">
+                <img
+                  class="rounded-circle"
+                  src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg"
+                  alt=""
+                  style="width: 40px; height: 40px"
+                />
+                <div class="w-100 ms-3">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h6 class="mb-0">Jhon Doe</h6>
+                    <small>15 minutes ago</small>
+                  </div>
+                  <span>Short message goes here...</span>
+                </div>
+              </div>
+              <div class="d-flex align-items-center pt-3">
+                <img
+                  class="rounded-circle"
+                  src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg"
+                  alt=""
+                  style="width: 40px; height: 40px"
+                />
+                <div class="w-100 ms-3">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h6 class="mb-0">Jhon Doe</h6>
+                    <small>15 minutes ago</small>
+                  </div>
+                  <span>Short message goes here...</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-xl-6 px-0 ps-md-2">
+            <div class="h-100 bg-white rounded p-4">
+              <div
+                class="d-flex align-items-center justify-content-between mb-4"
+              >
+                <h5 class="mb-0">To Do List</h5>
+                <a href="">Show All</a>
+              </div>
+              <div class="d-flex mb-2">
+                <input
+                  class="form-control bg-transparent"
+                  type="text"
+                  placeholder="Enter task"
+                />
+                <button type="button" class="btn btn-danger ms-2">Add</button>
+              </div>
+              <div class="d-flex align-items-center border-bottom py-2">
+                <input class="form-check-input m-0" type="checkbox" />
+                <div class="w-100 ms-3">
+                  <div
+                    class="d-flex w-100 align-items-center justify-content-between"
+                  >
+                    <span>Short task goes here...</span>
+                    <button class="btn btn-sm">
+                      <i class="fa fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center border-bottom py-2">
+                <input class="form-check-input m-0" type="checkbox" />
+                <div class="w-100 ms-3">
+                  <div
+                    class="d-flex w-100 align-items-center justify-content-between"
+                  >
+                    <span>Short task goes here...</span>
+                    <button class="btn btn-sm">
+                      <i class="fa fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center border-bottom py-2">
+                <input class="form-check-input m-0" type="checkbox" checked />
+                <div class="w-100 ms-3">
+                  <div
+                    class="d-flex w-100 align-items-center justify-content-between"
+                  >
+                    <span><del>Short task goes here...</del></span>
+                    <button class="btn btn-sm">
+                      <i class="fa fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center border-bottom py-2">
+                <input class="form-check-input m-0" type="checkbox" />
+                <div class="w-100 ms-3">
+                  <div
+                    class="d-flex w-100 align-items-center justify-content-between"
+                  >
+                    <span>Short task goes here...</span>
+                    <button class="btn btn-sm">
+                      <i class="fa fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center pt-2">
+                <input class="form-check-input m-0" type="checkbox" />
+                <div class="w-100 ms-3">
+                  <div
+                    class="d-flex w-100 align-items-center justify-content-between"
+                  >
+                    <span>Short task goes here...</span>
+                    <button class="btn btn-sm">
+                      <i class="fa fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="footer" class="footer">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Trade keeper</span></strong
+        >. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="../index.html">Trade Keeper</a>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="../assets/js/chart/chart.js"></script>
+    <script src="../assets/js/chart/chart.min.js"></script>
+    <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

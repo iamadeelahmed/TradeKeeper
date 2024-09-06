@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      type="x-icon"
+      href="../assets/img/logo/TradeKeeper-ICON.png"
+    />
+    <title>Trade Keeper</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="../assets/css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <header
+      id="header"
+      class="header fixed-top d-flex align-items-center p-3 mb-5"
+    >
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="../index.html" class="logo d-flex align-items-center">
+          <img src="../assets/img/logo/TradeKeeper.png" alt="" />
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div>
+      <div class="search-bar d-flex ms-auto">
+        <form
+          class="search-form d-flex align-items-center"
+          method="POST"
+          action="#"
+        >
+          <input
+            type="text"
+            name="query"
+            placeholder="Search"
+            title="Enter search keyword"
+          />
+          <button type="submit" title="Search">
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+        <div>
+          <img
+            class="rounded-circle"
+            src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg"
+            alt="user image"
+          />
+          <p>User</p>
+        </div>
+      </div>
+    </header>
+    <aside id="sidebar" class="sidebar">
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="../pages/home.html">
+            <i class="bi bi-grid"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="../pages/trader-data.html">
+            <i class="bi bi-journal-text"></i>
+            <span>Trader Data</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/brokers.html">
+            <i class="bi bi-journal-text"></i>
+            <span>Brokers</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="../pages/vps.html">
+            <i class="bi bi-journal-text"></i>
+            <span>VPS Details</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <main id="main" class="main">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">
+                Broker's List
+                <button
+                  type="button"
+                  class="btn rounded-pill btn-info float-end"
+                  data-bs-toggle="modal"
+                  data-bs-target="#brokerModal"
+                >
+                  Add Trader
+                </button>
+              </h4>
+              <!-- Modal start -->
+              <div
+                class="modal fade"
+                id="brokerModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-xl">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        New Trader
+                      </h1>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body m-auto w-75">
+                      <form id="brokerDataForm">
+                        <div class="mb-3 row">
+                          <label
+                            for="exampleInput1"
+                            class="col-12 col-md-6 col-lg-3 col-form-label"
+                            >Name:</label
+                          >
+                          <div class="col-12 col-md-6 col-lg-9">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="exampleInput1"
+                              aria-describedby="emailHelp"
+                              placeholder="Enter Your Name"
+                              name="fullname"
+                            />
+                          </div>
+                        </div>
+                        <div class="mb-3 row">
+                          <label
+                            for="exampleInput2"
+                            class="col-12 col-md-6 col-lg-3 col-form-label"
+                            >Father's Name:</label
+                          >
+                          <div class="col-12 col-md-6 col-lg-9">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="exampleInput2"
+                              placeholder="Enter Father's Name"
+                              name="fathersname"
+                            />
+                          </div>
+                        </div>
+                        <div class="mb-3 row">
+                          <label
+                            for="exampleInput3"
+                            class="col-12 col-md-6 col-lg-3 col-form-label"
+                            >N-ID Card No:</label
+                          >
+                          <div class="col-12 col-md-6 col-lg-9">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="exampleInput3"
+                              placeholder="31202-2345322-9"
+                              name="cnic"
+                            />
+                          </div>
+                        </div>
+                        <div class="mb-3 row">
+                          <label
+                            for="exampleInput4"
+                            class="col-12 col-md-6 col-lg-3 col-form-label"
+                            >Phone Number:</label
+                          >
+                          <div class="col-12 col-md-6 col-lg-9">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="exampleInput4"
+                              placeholder="+923002390187"
+                              name="mobile"
+                            />
+                          </div>
+                        </div>
+                        <div class="mb-3 row">
+                          <label
+                            for="exampleInput5"
+                            class="col-12 col-md-6 col-lg-3 col-form-label"
+                            >VPS No:</label
+                          >
+                          <div class="col-12 col-md-6 col-lg-9">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="exampleInput5"
+                              placeholder="Enter VPS No"
+                              name="vps-no"
+                            />
+                          </div>
+                        </div>
+                        <div class="mb-3 row">
+                          <label
+                            for="exampleInput6"
+                            class="col-12 col-md-6 col-lg-3 col-form-label"
+                            >VPS Password:</label
+                          >
+                          <div class="col-12 col-md-6 col-lg-9">
+                            <input
+                              type="password"
+                              class="form-control"
+                              id="exampleInput6"
+                              placeholder="Enter VPS Password"
+                              name="vps-password"
+                            />
+                          </div>
+                        </div>
+                        <div class="mb-3 row">
+                          <label
+                            for="exampleInput7"
+                            class="col-12 col-md-6 col-lg-3 col-form-label"
+                            >Email ID:</label
+                          >
+                          <div class="col-12 col-md-6 col-lg-9">
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="exampleInput7"
+                              placeholder="Enter your Email"
+                              name="email"
+                            />
+                          </div>
+                        </div>
+                        <div class="mb-3 row">
+                          <label
+                            for="exampleInput8"
+                            class="col-12 col-md-6 col-lg-3 col-form-label"
+                            >Email Password:</label
+                          >
+                          <div class="col-12 col-md-6 col-lg-9">
+                            <input
+                              type="password"
+                              class="form-control"
+                              id="exampleInput8"
+                              placeholder="Enter Email Password"
+                              name="email-password"
+                            />
+                          </div>
+                        </div>
+                        <div class="mb-3 row">
+                          <label
+                            for="exampleInput9"
+                            class="col-12 col-md-6 col-lg-3 col-form-label"
+                            >Wallet Name:</label
+                          >
+                          <div class="col-12 col-md-6 col-lg-9">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="exampleInput9"
+                              placeholder="Enter Wallet Name"
+                              name="wallet-name"
+                            />
+                          </div>
+                        </div>
+                        <div class="mb-3 row">
+                          <label
+                            for="exampleInput10"
+                            class="col-12 col-md-6 col-lg-3 col-form-label"
+                            >Wallet Password:</label
+                          >
+                          <div class="col-12 col-md-6 col-lg-9">
+                            <input
+                              type="password"
+                              class="form-control"
+                              id="exampleInput10"
+                              placeholder="Enter Wallet Password"
+                              name="wallet-password"
+                            />
+                          </div>
+                        </div>
+                        <div class="mb-3 row">
+                          <label
+                            for="exampleInput11"
+                            class="col-12 col-md-6 col-lg-3 col-form-label"
+                            >Address:</label
+                          >
+                          <div class="col-12 col-md-6 col-lg-9">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="exampleInput11"
+                              placeholder="Enter Your Address"
+                              name="address"
+                            />
+                          </div>
+                        </div>
+                        <div class="mb-3 row">
+                          <label
+                            for="exampleInput12"
+                            class="col-12 col-md-6 col-lg-3 col-form-label"
+                            >Data File:</label
+                          >
+                          <div class="col-12 col-md-6 col-lg-9">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="exampleInput12"
+                              placeholder="Enter Data File"
+                              name="data-file"
+                            />
+                          </div>
+                        </div>
+                        <div class="mb-3 row">
+                          <label
+                            for="exampleInput13"
+                            class="col-12 col-md-6 col-lg-3 col-form-label"
+                            >Date of Birth:</label
+                          >
+                          <div class="col-12 col-md-6 col-lg-9">
+                            <input
+                              type="date"
+                              class="form-control"
+                              id="exampleInput13"
+                              placeholder="Enter Your DOB"
+                              name="date-of-birth"
+                            />
+                          </div>
+                        </div>
+                        <div class="mb-3 row">
+                          <label
+                            for="exampleInput14"
+                            class="col-12 col-md-6 col-lg-3 col-form-label"
+                            >IP Address:</label
+                          >
+                          <div class="col-12 col-md-6 col-lg-9">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="exampleInput14"
+                              placeholder="192.10.182.01:8080"
+                              name="ipaddress"
+                            />
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="brokerBtnReset"
+                      >
+                        Reset
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-info"
+                        id="brokerBtnAdd"
+                        data-bs-dismiss="modal"
+                      >
+                        Add
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- modal end -->
+              <div class="table-responsive">
+                <table class="table table-striped" id="table">
+                  <thead>
+                    <tr>
+                      <th>First name</th>
+                      <th>Father's name</th>
+                      <th>CNIC</th>
+                      <th>Mobile</th>
+                      <th>IP Address</th>
+                      <th>VPS No</th>
+                    </tr>
+                  </thead>
+                  <tbody id="brokerTableBody">
+                    <tr>
+                      <td>Herman Beck</td>
+                      <td>Mr.Beck</td>
+                      <td>31202-2311321-1</td>
+                      <td>+923112311237</td>
+                      <td>192.10.182.01:8080</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Messsy Adam</td>
+                      <td>Mr.Adam</td>
+                      <td>31202-1098232-9</td>
+                      <td>+923129088723</td>
+                      <td>162.119.01.91:9000</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>John Richards</td>
+                      <td>Mr.Richards</td>
+                      <td>31202-1092210-9</td>
+                      <td>+923008809233</td>
+                      <td>192.168.10.1:9001</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Peter Meggik</td>
+                      <td>Mr.Meggik</td>
+                      <td>31202-1112321-9</td>
+                      <td>+923081122332</td>
+                      <td>166.998.01.1:9009</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Edward Jenar</td>
+                      <td>Mr.Jenar</td>
+                      <td>31202-1112229-1</td>
+                      <td>+923001122399</td>
+                      <td>192.111.01.9:8010</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>John Doe</td>
+                      <td>Mr.Doe</td>
+                      <td>31202-9981128-3</td>
+                      <td>+923009191123</td>
+                      <td>168.91.01.11:7000</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Henry Tom</td>
+                      <td>Mr.Tom</td>
+                      <td>31202-1983229-8</td>
+                      <td>+923109981278</td>
+                      <td>190.991.10.1:7070</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Herman Beck</td>
+                      <td>Mr.Beck</td>
+                      <td>31202-2311321-1</td>
+                      <td>+923112311237</td>
+                      <td>192.10.182.01:8080</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Messsy Adam</td>
+                      <td>Mr.Adam</td>
+                      <td>31202-1098232-9</td>
+                      <td>+923129088723</td>
+                      <td>162.119.01.91:9000</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>John Richards</td>
+                      <td>Mr.Richards</td>
+                      <td>31202-1092210-9</td>
+                      <td>+923008809233</td>
+                      <td>192.168.10.1:9001</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Peter Meggik</td>
+                      <td>Mr.Meggik</td>
+                      <td>31202-1112321-9</td>
+                      <td>+923081122332</td>
+                      <td>166.998.01.1:9009</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Edward Jenar</td>
+                      <td>Mr.Jenar</td>
+                      <td>31202-1112229-1</td>
+                      <td>+923001122399</td>
+                      <td>192.111.01.9:8010</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>John Doe</td>
+                      <td>Mr.Doe</td>
+                      <td>31202-9981128-3</td>
+                      <td>+923009191123</td>
+                      <td>168.91.01.11:7000</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Henry Tom</td>
+                      <td>Mr.Tom</td>
+                      <td>31202-1983229-8</td>
+                      <td>+923109981278</td>
+                      <td>190.991.10.1:7070</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Herman Beck</td>
+                      <td>Mr.Beck</td>
+                      <td>31202-2311321-1</td>
+                      <td>+923112311237</td>
+                      <td>192.10.182.01:8080</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Messsy Adam</td>
+                      <td>Mr.Adam</td>
+                      <td>31202-1098232-9</td>
+                      <td>+923129088723</td>
+                      <td>162.119.01.91:9000</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>John Richards</td>
+                      <td>Mr.Richards</td>
+                      <td>31202-1092210-9</td>
+                      <td>+923008809233</td>
+                      <td>192.168.10.1:9001</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Peter Meggik</td>
+                      <td>Mr.Meggik</td>
+                      <td>31202-1112321-9</td>
+                      <td>+923081122332</td>
+                      <td>166.998.01.1:9009</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Edward Jenar</td>
+                      <td>Mr.Jenar</td>
+                      <td>31202-1112229-1</td>
+                      <td>+923001122399</td>
+                      <td>192.111.01.9:8010</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>John Doe</td>
+                      <td>Mr.Doe</td>
+                      <td>31202-9981128-3</td>
+                      <td>+923009191123</td>
+                      <td>168.91.01.11:7000</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Henry Tom</td>
+                      <td>Mr.Tom</td>
+                      <td>31202-1983229-8</td>
+                      <td>+923109981278</td>
+                      <td>190.991.10.1:7070</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Herman Beck</td>
+                      <td>Mr.Beck</td>
+                      <td>31202-2311321-1</td>
+                      <td>+923112311237</td>
+                      <td>192.10.182.01:8080</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Messsy Adam</td>
+                      <td>Mr.Adam</td>
+                      <td>31202-1098232-9</td>
+                      <td>+923129088723</td>
+                      <td>162.119.01.91:9000</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>John Richards</td>
+                      <td>Mr.Richards</td>
+                      <td>31202-1092210-9</td>
+                      <td>+923008809233</td>
+                      <td>192.168.10.1:9001</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Peter Meggik</td>
+                      <td>Mr.Meggik</td>
+                      <td>31202-1112321-9</td>
+                      <td>+923081122332</td>
+                      <td>166.998.01.1:9009</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Edward Jenar</td>
+                      <td>Mr.Jenar</td>
+                      <td>31202-1112229-1</td>
+                      <td>+923001122399</td>
+                      <td>192.111.01.9:8010</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>John Doe</td>
+                      <td>Mr.Doe</td>
+                      <td>31202-9981128-3</td>
+                      <td>+923009191123</td>
+                      <td>168.91.01.11:7000</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Henry Tom</td>
+                      <td>Mr.Tom</td>
+                      <td>31202-1983229-8</td>
+                      <td>+923109981278</td>
+                      <td>190.991.10.1:7070</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Herman Beck</td>
+                      <td>Mr.Beck</td>
+                      <td>31202-2311321-1</td>
+                      <td>+923112311237</td>
+                      <td>192.10.182.01:8080</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Messsy Adam</td>
+                      <td>Mr.Adam</td>
+                      <td>31202-1098232-9</td>
+                      <td>+923129088723</td>
+                      <td>162.119.01.91:9000</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>John Richards</td>
+                      <td>Mr.Richards</td>
+                      <td>31202-1092210-9</td>
+                      <td>+923008809233</td>
+                      <td>192.168.10.1:9001</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Peter Meggik</td>
+                      <td>Mr.Meggik</td>
+                      <td>31202-1112321-9</td>
+                      <td>+923081122332</td>
+                      <td>166.998.01.1:9009</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Edward Jenar</td>
+                      <td>Mr.Jenar</td>
+                      <td>31202-1112229-1</td>
+                      <td>+923001122399</td>
+                      <td>192.111.01.9:8010</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>John Doe</td>
+                      <td>Mr.Doe</td>
+                      <td>31202-9981128-3</td>
+                      <td>+923009191123</td>
+                      <td>168.91.01.11:7000</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>Henry Tom</td>
+                      <td>Mr.Tom</td>
+                      <td>31202-1983229-8</td>
+                      <td>+923109981278</td>
+                      <td>190.991.10.1:7070</td>
+                      <td>12345</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="footer" class="footer">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Trade keeper</span></strong
+        >. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="../index.html">Trade Keeper</a>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="../assets/js/chart/chart.js"></script>
+    <script src="../assets/js/chart/chart.min.js"></script>
+    <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>
